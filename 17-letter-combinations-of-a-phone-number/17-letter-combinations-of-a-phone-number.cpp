@@ -5,14 +5,12 @@ private:
     vector<string> ans;
     
     void helper(int pos, string curr){
-        
         string pre = mpp[nums[pos]];
         
         for(int i=0; i<pre.length(); i++){
             if(pos == nums.size()-1) ans.push_back(curr+pre[i]);
             else helper(pos+1, curr+pre[i]);
         }
-        
     }
 
 public:
@@ -31,10 +29,7 @@ public:
         mpp[7] = "pqrs";
         mpp[8] = "tuv";
         mpp[9] = "wxyz";
-        
-        
-        
-        
+
         for(auto it: digits){
             nums.push_back(it-'0');
         }
