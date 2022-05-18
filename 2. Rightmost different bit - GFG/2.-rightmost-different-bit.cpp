@@ -14,23 +14,15 @@ class Solution
     //Function to find the first position with different bits.
     int posOfRightMostDiffBit(int m, int n)
     {
-        // Your code here
-        // for(int i=0; i<32; i++){
-        //     if(! (m & (1<<i)) && (n & (1<<i))){
-        //         return i+1;
-        //     }
-        // }
-        // return -1;
+
         int cnt = 1;
         int temp = m^n;
         
-        while(temp){
-            if(temp%2) return cnt;
-            cnt++;
-            temp /= 2;
-        }
+        int ans = ffs(temp);
         
-        return -1;
+        if( ans != 0) return ans;
+        else return -1;
+        
     }
 };
 
